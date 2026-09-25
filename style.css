@@ -1,61 +1,65 @@
 body {
     background-color: #F4F6F9;
-    font-family: system-ui, sans-serif;
+    font-family: system-ui, -apple-system, sans-serif;
     color: #2c3e50;
     margin: 0;
-    padding: 30px 15px;
+    padding: 25px 15px;
     display: flex;
     justify-content: center;
 }
 
-/* Головна картка: на комп'ютері 2 колонки */
+/* Центральна картка */
 .card {
     background: #ffffff;
-    max-width: 760px;
+    max-width: 740px;
     width: 100%;
     border-radius: 16px;
     border: 1px solid #eaeaea;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 25px;
     box-sizing: border-box;
     display: flex;
-    gap: 35px;
+    gap: 30px;
 }
 
 /* Ліва колонка */
 .left-col {
-    width: 260px;
+    width: 250px;
     text-align: center;
     flex-shrink: 0;
 }
 
+/* Фіксований акуратний розмір фото */
 .profile-img {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
     border-radius: 14px;
     object-fit: cover;
+    display: block;
+    margin: 0 auto;
 }
 
-.title { margin: 15px 0 5px; }
-.role { margin: 0; color: #64748b; font-size: 14px; }
-.short-hr { width: 70%; margin: 15px auto; }
-.loc { margin: 8px 0; }
-.contact-box { margin: 10px 0; }
+.title { margin: 12px 0 4px; font-size: 20px; }
+.role { margin: 0; color: #64748b; font-size: 13px; }
+.short-hr { width: 70%; margin: 14px auto; }
+.loc { margin: 8px 0; font-size: 14px; }
+.contact-box { margin: 10px 0; font-size: 14px; }
 
 /* Права колонка */
 .right-col {
     flex-grow: 1;
 }
 
-.section-title { margin-top: 0; margin-bottom: 12px; }
-.links-list p { margin: 6px 0; }
-.focus-list { margin-bottom: 0; }
+.section-title { margin-top: 0; margin-bottom: 10px; font-size: 17px; }
+.info-p { margin: 6px 0; font-size: 14px; }
+.links-list p { margin: 6px 0; font-size: 14px; }
+.focus-list { margin-bottom: 0; font-size: 14px; }
 
 /* Загальні елементи */
 hr {
     border: none;
     border-top: 1px solid #eeeeee;
-    margin: 16px 0;
+    margin: 14px 0;
 }
 
 a {
@@ -63,27 +67,38 @@ a {
     text-decoration: none;
 }
 
+/* Чорна кнопка */
 .btn {
     display: inline-block;
     background-color: #111827;
     color: #ffffff !important;
     padding: 8px 16px;
     border-radius: 8px;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 13px;
+    font-weight: 600;
     text-decoration: none;
     margin-top: 5px;
 }
 
-/* АДАПТИВНІСТЬ ДЛЯ ТЕЛЕФОНІВ (екран менше 700px) */
-@media (max-width: 700px) {
+/* Мобільна версія */
+@media (max-width: 650px) {
     .card {
-        flex-direction: column; /* перетворює 2 колонки в один стовпчик */
-        gap: 20px;
+        flex-direction: column;
+        align-items: center;
         padding: 20px;
+        gap: 15px;
     }
 
     .left-col {
-        width: 100%; /* розтягує на всю ширину */
+        width: 100%;
+    }
+
+    .right-col {
+        width: 100%;
+    }
+
+    .profile-img {
+        width: 140px;
+        height: 140px;
     }
 }
