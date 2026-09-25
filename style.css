@@ -2,36 +2,88 @@ body {
     background-color: #F4F6F9;
     font-family: system-ui, sans-serif;
     color: #2c3e50;
-    margin: 40px auto;
+    margin: 0;
+    padding: 30px 15px;
+    display: flex;
+    justify-content: center;
 }
 
-.card-table {
-    background-color: #ffffff;
+/* Головна картка: на комп'ютері 2 колонки */
+.card {
+    background: #ffffff;
+    max-width: 760px;
+    width: 100%;
     border-radius: 16px;
     border: 1px solid #eaeaea;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    gap: 35px;
+}
+
+/* Ліва колонка */
+.left-col {
+    width: 260px;
+    text-align: center;
+    flex-shrink: 0;
 }
 
 .profile-img {
+    width: 180px;
+    height: 180px;
     border-radius: 14px;
+    object-fit: cover;
 }
 
+.title { margin: 15px 0 5px; }
+.role { margin: 0; color: #64748b; font-size: 14px; }
+.short-hr { width: 70%; margin: 15px auto; }
+.loc { margin: 8px 0; }
+.contact-box { margin: 10px 0; }
+
+/* Права колонка */
+.right-col {
+    flex-grow: 1;
+}
+
+.section-title { margin-top: 0; margin-bottom: 12px; }
+.links-list p { margin: 6px 0; }
+.focus-list { margin-bottom: 0; }
+
+/* Загальні елементи */
 hr {
     border: none;
     border-top: 1px solid #eeeeee;
+    margin: 16px 0;
 }
 
-.portfolio-btn {
-    display: inline-block;
-    background-color: #111827;
-    color: #ffffff;
-    padding: 8px 16px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.social-link {
+a {
     color: #2563eb;
     text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #111827;
+    color: #ffffff !important;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+/* АДАПТИВНІСТЬ ДЛЯ ТЕЛЕФОНІВ (екран менше 700px) */
+@media (max-width: 700px) {
+    .card {
+        flex-direction: column; /* перетворює 2 колонки в один стовпчик */
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .left-col {
+        width: 100%; /* розтягує на всю ширину */
+    }
 }
