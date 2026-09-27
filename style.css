@@ -51,7 +51,7 @@ a {
 
 .btn {
     display: inline-block;
-    background: #f472b6;       /* або ніжніший #fbcfe8 з темно-ягідним текстом #9d174d */
+    background: #f472b6;
     color: #fff !important;
     padding: 8px 18px;
     border-radius: 20px;
