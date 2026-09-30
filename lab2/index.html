@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Обід</title>
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      margin: 0;
+    }
+    button {
+      margin-top: 15px;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <h2>Оберіть обід: </h2>
+
+    <form id="lunch">
+      <div id="menu"></div>
+      <button type="button" onclick="calcTotal()">Total</button>
+      <button type="button" onclick="clearAll()">Clear</button>
+    </form>
+
+    <h2 id="total">Total: 0 грн</h2>
+  </div>
+
+  <script>
+    const dishes = {
+      bevarge: [
+        { title: 'Чай', price: 10 },
+        { title: 'Сік', price: 20 },
+        { title: 'Кава', price: 35 }
+      ],
+      firstScore: [
+        { title: 'Суп з креветками', price: 65 },
+        { title: 'Борщ', price: 37 }
+      ],
+      secondScore: [
+        { title: 'Паста', price: 60 },
+        { title: 'Картопля з котлетою', price: 55 },
+        { title: 'Гречка з грибами', price: 49 }
+      ]
+    };
+
+    const titles = {
+      bevarge: 'Напої:',
+      firstScore: 'Перша страва:',
+      secondScore: 'Друга страва:'
+    };
+
+    const menuBox = document.getElementById('menu');
+
+    for (let category in dishes) {
+  // для напоїв чекбокс, для інших - радіо
+    let type = "radio";
+    if (category === "bevarge") {
+        type = "checkbox";
+    }
+
+    menuBox.innerHTML += "<h3>" + titles[category] + "</h3>";
+
+    for (let item of dishes[category]) {
+        menuBox.innerHTML += 
+        "<label>" +
+            "<input type='" + type + "' name='" + category + "' value='" + item.price + "'> " +
+            item.title + " – " + item.price + " грн." +
+        "</label><br>";
+    }
+    }
+
+    function calcTotal() {
+      let sum = 0;
+      // Знаходимо всі позначені галочки та кружечки
+      document.querySelectorAll('#lunch input:checked').forEach(input => {
+        sum += Number(input.value);
+      });
+      document.getElementById('total').textContent = `Total: ${sum} грн`;
+    }
+
+    function clearAll() {
+      document.getElementById('lunch').reset();
+      document.getElementById('total').textContent = 'Total: 0 грн';
+    }
+  </script>
+
+</body>
+</html>
