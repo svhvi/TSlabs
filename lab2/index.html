@@ -79,7 +79,6 @@
 
     function calcTotal() {
       let sum = 0;
-      // Знаходимо всі позначені галочки та кружечки
       document.querySelectorAll('#lunch input:checked').forEach(input => {
         sum += Number(input.value);
       });
