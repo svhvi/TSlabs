@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Лабораторна робота 3</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 24px;
+      color: #222;
+      background-color: #fafafa;
+    }
+
+    h2 {
+      margin-bottom: 14px;
+      font-size: 20px;
+    }
+
+    hr {
+      margin: 32px 0;
+      border: 0;
+      border-top: 1px solid #ddd;
+    }
+
+    /* --- 1.триколонковий макет --- */
+    .layout-container {
+      max-width: 960px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      background-color: #fff;
+    }
+
+    .header {
+      background-color: #d4af37;
+      padding: 16px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .left {
+      float: left;
+      width: 25%;
+      min-height: 220px;
+      background-color: #00bcd4;
+      padding: 16px;
+    }
+
+    .center {
+      float: left;
+      width: 50%;
+      min-height: 220px;
+      background-color: #5c6bc0;
+      color: #ffffff;
+      padding: 16px;
+    }
+
+    .right {
+      float: right;
+      width: 25%;
+      min-height: 220px;
+      background-color: #ffeb3b;
+      padding: 16px;
+    }
+
+    .footer {
+      clear: both; /* скасовує обтікання float, щоб підвал лишався внизу */
+      background-color: #f48fb1;
+      padding: 14px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* --- 2.фігури через border --- */
+    .box-border {
+      width: 50px;
+      height: 50px;
+      border-width: 30px;
+      border-style: solid;
+      border-color: red green orange black;
+      margin-bottom: 20px;
+    }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 30px solid orange;
+      margin-bottom: 10px;
+    }
+
+    /* --- 3.позиціонування --- */
+    .parent {
+      position: relative;
+      width: 300px;
+      height: 140px;
+      background-color: #e0e0e0;
+      border: 1px solid #999;
+      padding: 10px;
+    }
+
+    .child {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 90px;
+      height: 45px;
+      background-color: #7b1fa2;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Трьохколонковий макет -->
+  <h2>1.Триколонковий макет (float)</h2>
+  <div class="layout-container">
+    <div class="header">Шапка сайту</div>
+    <div class="left">
+      <strong>Ліва колонка</strong><br>
+      (float: left)
+    </div>
+    <div class="center">
+      <strong>Основний вміст</strong><br>
+      Центральна частина сторінки
+    </div>
+    <div class="right">
+      <strong>Права колонка</strong><br>
+      (float: right)
+    </div>
+    <div class="footer">Підвал сайту</div>
+  </div>
+
+  <hr>
+
+  <!-- Фігури через border -->
+  <h2>2. Фігури за допомогою рамки </h2>
+  <div class="box-border"></div>
+  <div class="triangle"></div>
+
+  <hr>
+
+  <!-- Позиціонування relative та absolute -->
+  <h2>3. Позиціонування (relative та absolute)</h2>
+  <div class="parent">
+    Контейнер (position: relative)
+    <div class="child">absolute</div>
+  </div>
+
+</body>
+</html>
