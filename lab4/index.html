@@ -2,29 +2,134 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Магазин</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Онлайн-магазин</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+
+    /* FLEX-BOX: шапка магазину */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #333;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 8px;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    h1 {
+      margin-top: 30px;
+    }
+
+    /* GRID : сітка для карток товарів */
+    #catalog {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    /* FLEX-BOX: картка товару (щоб кнопка рівно стояла внизу) */
+    .card {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    .price {
+      color: green;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    button {
+      margin-top: auto;
+      padding: 8px 15px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Хедер на flex-box -->
-  <header class="header">
-    <div class="logo">MyStore</div>
-    <nav class="menu">
+  <!-- Шапка на Flexbox -->
+  <header>
+    <h2>TechShop</h2>
+    <nav>
       <a href="#">Головна</a>
-      <a href="#">Каталог</a>
+      <a href="#">Товари</a>
       <a href="#">Контакти</a>
     </nav>
   </header>
 
-  <main class="container">
-    <h1>Каталог товарів</h1>
-    
-    <!-- Сітка на grid (той самий "пкшв") -->
-    <div id="catalog" class="catalog-grid"></div>
-  </main>
+  <h1>Каталог товарів</h1>
 
-  <script src="data.js"></script>
-  <script src="main.js"></script>
+  <!-- Сітка карток на Grid -->
+  <div id="catalog"></div>
+
+  <script>
+    // Фіксовані дані товарів (прямо тут у масиві)
+    const products = [
+      { id: 1, name: "Ноутбук", price: 28000, img: "https://picsum.photos/seed/laptop/300/200" },
+      { id: 2, name: "Смартфон", price: 16500, img: "https://picsum.photos/seed/phone/300/200" },
+      { id: 3, name: "Навушники", price: 2200, img: "https://picsum.photos/seed/headphones/300/200" },
+      { id: 4, name: "Мишка", price: 750, img: "https://picsum.photos/seed/mouse/300/200" },
+      { id: 5, name: "Клавіатура", price: 1800, img: "https://picsum.photos/seed/keyboard/300/200" },
+      { id: 6, name: "Монітор", price: 8200, img: "https://picsum.photos/seed/monitor/300/200" }
+    ];
+
+    const catalogContainer = document.getElementById("catalog");
+
+    // Динамічне створення карток через JS
+    products.forEach(item => {
+      catalogContainer.innerHTML += `
+        <div class="card">
+          <img src="${item.img}" alt="${item.name}">
+          <h3>${item.name}</h3>
+          <p class="price">${item.price} грн</p>
+          <button onclick="alert('Товар додано: ${item.name}')">Купити</button>
+        </div>
+      `;
+    });
+  </script>
 </body>
 </html>
