@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Домашня бібліотека</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Домашня бібліотека</h1>
+  </header>
+
+  <main class="container">
+    
+    <section class="card">
+      <h2 id="form-title">Додати книжку</h2>
+      
+      <form id="book-form">
+        <input type="hidden" id="book-id">
+
+        <div class="form-group">
+          <label for="title">Назва книжки</label>
+          <input type="text" id="title" required placeholder="Наприклад: Кобзар">
+        </div>
+
+        <div class="form-group">
+          <label for="author">Автор</label>
+          <input type="text" id="author" required placeholder="Наприклад: Тарас Шевченко">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="genre">Жанр</label>
+            <select id="genre" required>
+              <option value="Художня">Художня</option>
+              <option value="Фантастика">Фантастика</option>
+              <option value="Детектив">Детектив</option>
+              <option value="Наука">Наука</option>
+              <option value="Психологія">Психологія</option>
+              <option value="Романтика">Романтика</option>
+              <option value="Інше">Інше</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="year">Рік видання</label>
+            <input type="number" id="year" required min="1000" max="2026" value="2024">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="status">Статус</label>
+            <select id="status" required>
+              <option value="Прочитано">Прочитано</option>
+              <option value="В процесі">В процесі</option>
+              <option value="Заплановано">Заплановано</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="rating">Оцінка (1-5)</label>
+            <input type="number" id="rating" min="1" max="5" value="5" required>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="save-btn" class="btn primary">Зберегти</button>
+          <button type="button" id="cancel-btn" class="btn secondary" style="display: none;">Скасувати</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Мої книжки</h2>
+      
+      <div class="filters">
+        <input type="text" id="search-input" placeholder="Пошук за назвою або автором...">
+        <select id="filter-genre">
+          <option value="all">Усі жанри</option>
+          <option value="Художня">Художня</option>
+          <option value="Фантастика">Фантастика</option>
+          <option value="Детектив">Детектив</option>
+          <option value="Наука">Наука</option>
+          <option value="Психологія">Психологія</option>
+          <option value="Романтика">Романтика</option>
+          <option value="Інше">Інше</option>
+        </select>
+      </div>
+
+      <div id="books-list" class="books-grid"></div>
+    </section>
+
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
