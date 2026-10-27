@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #111;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+h1, h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: inline-block;
+    width: 80px;
+    font-weight: bold;
+}
+
+.form-group input {
+    padding: 8px;
+    width: calc(100% - 90px);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #eFEFEF;
+    border: 1px solid #adadad;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+button:hover {
+    background-color: #e5e5e5;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 30px 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Стилі для карток товарів у списку */
+.product-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.product-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+}
+
+.product-info p {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.product-actions button {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.test-text {
+    color: #333;
+}

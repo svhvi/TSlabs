@@ -1,0 +1,34 @@
+class Student {
+  readonly univ_title: string;
+  
+  #fullname: string;
+  #score: number;
+
+  constructor(univ_title: string, fullname: string, score: number) {
+    this.univ_title = univ_title;
+    this.#fullname = fullname;
+    this.score = score;
+  }
+
+  get fullname(): string {
+    return this.#fullname;
+  }
+
+  set fullname(value: string) {
+    if (!value.trim()) {
+      throw new Error("ПІБ не може бути порожнім.");
+    }
+    this.#fullname = value;
+  }
+
+  get score(): number {
+    return this.#score;
+  }
+
+  set score(value: number) {
+    if (value < 0 || value > 100) {
+      throw new Error("Оцінка має бути в діапазоні від 0 до 100.");
+    }
+    this.#score = value;
+  }
+}

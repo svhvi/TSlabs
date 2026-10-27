@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менеджер товарів</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Секція форми -->
+        <section class="form-section">
+            <h1 id="form-title">Додати новий продукт</h1>
+            <form id="product-form">
+                <input type="hidden" id="product-id">
+                
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" placeholder="Назва продукту" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" id="price" placeholder="Ціна продукту" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <input type="text" id="category" placeholder="Категорія продукту" required>
+                </div>
+
+                <button type="submit" id="submit-btn">Додати продукт</button>
+                <button type="button" id="cancel-btn" class="hidden">Скасувати</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <!-- Секція списку товарів -->
+        <section class="list-section">
+            <h2>Список продуктів</h2>
+            <div id="products-container">
+                <!-- Сюди динамічно рендеритиметься список або повідомлення -->
+                <p class="test-text">test text</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Підключення скомпільованого TypeScript скрипта -->
+    <script src="dist/app.js" defer></script>
+</body>
+</html>
