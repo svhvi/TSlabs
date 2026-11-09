@@ -46,7 +46,6 @@ class Logger {
 //   }
 // }
 
-// Окремий клас для валідації
 class UserValidator {
     validateEmail(email: string): boolean {
         return email.includes("@") && email.includes(".");
@@ -90,7 +89,6 @@ class UserManager {
 //   }
 // }
 
-// 1. Клас для читання файлу
 class FileReaderClass {
     readFile(path: string): string {
         console.log(`Reading file: ${path}`);
@@ -98,7 +96,6 @@ class FileReaderClass {
     }
 }
 
-// 2. Клас для форматування даних
 class DataFormatter {
     formatData(data: string): string {
         console.log("Formatting data...");
@@ -106,7 +103,6 @@ class DataFormatter {
     }
 }
 
-// 3. Клас для виведення даних
 class DataPrinter {
     printData(data: string): void {
         console.log("Printing formatted data:\n", data);
@@ -150,21 +146,18 @@ class FileProcessor {
 //   }
 // }
 
-// 1. Клас для генерації повідомлення
 class MessageBuilder {
     createMessage(user: string, msg: string): string {
         return `To ${user}: ${msg}`;
     }
 }
 
-// 2. Клас для надсилання повідомлення
 class MessageSender {
     send(msg: string): void {
         console.log("Sending:", msg);
     }
 }
 
-// 3. Клас для збереження в історію
 class HistoryLogger {
     saveHistory(msg: string): void {
         console.log("Saving to history:", msg);
@@ -210,7 +203,6 @@ class NotificationService {
 //   }
 // }
 
-// 1. Клас для збору даних
 class DataCollector {
     collectData(): string {
         console.log("Collecting report data...");
@@ -218,7 +210,6 @@ class DataCollector {
     }
 }
 
-// 2. Клас для форматування у PDF
 class PDFFormatter {
     formatToPDF(data: string): string {
         console.log("Formatting to PDF...");
@@ -226,7 +217,6 @@ class PDFFormatter {
     }
 }
 
-// 3. Клас для надсилання поштою
 class EmailSender {
     sendByEmail(report: string): void {
         console.log("Sending report via email:", report);
@@ -270,7 +260,6 @@ class PaymentProcessorBad {
 }
 */
 
-// Інтерфейс для платіжних систем
 interface PaymentMethod {
     processPayment(amount: number): void;
 }
@@ -319,7 +308,6 @@ class ExporterBad {
 }
 */
 
-// Інтерфейс для форматів експорту
 interface ExportStrategy {
     exportData(data: any): void;
 }
@@ -364,7 +352,6 @@ class TaxCalculatorBad {
 }
 */
 
-// Інтерфейс для розрахунку податків
 interface TaxCalculationStrategy {
     calculate(amount: number): number;
 }
@@ -415,7 +402,6 @@ class MessageDisplayBad {
 }
 */
 
-// Інтерфейс для відображення повідомлень
 interface MessageRenderer {
     render(text: string): void;
 }
@@ -472,7 +458,6 @@ class DiscountManagerBad {
 }
 */
 
-// Інтерфейс для стратегії знижок
 interface DiscountStrategy {
     calculatePrice(price: number): number;
 }
